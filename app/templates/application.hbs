@@ -1,5 +1,27 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="wrapper d-flex flex-column">
+  {{#bs-navbar type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
+    <div class="navbar-header">
+      {{navbar.toggle}}
+      {{#link-to "home" class="navbar-brand"}}<img src="./assets/images/treehouse-logo.png" />{{/link-to}}
+    </div>
+    {{#navbar.content}}
+      {{#navbar.nav as |nav|}}
+        {{#nav.item}}{{#nav.link-to "home"}}Home{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "index"}}Courses{{/nav.link-to}}{{/nav.item}}
+        {{#nav.dropdown as |dd|}}
+          {{#dd.toggle}}Achievements <span class="caret"></span>{{/dd.toggle}}
+          {{#dd.menu as |ddm|}}
+            {{#ddm.item}}{{#ddm.link-to "index"}}JavaScript{{/ddm.link-to}}{{/ddm.item}}
+            {{#ddm.item}}{{#ddm.link-to "index"}}CSS{{/ddm.link-to}}{{/ddm.item}}
+          {{/dd.menu}}
+        {{/nav.dropdown}}
+      {{/navbar.nav}}
+    {{/navbar.content}}
+  {{/bs-navbar}}
+  <div class="flex-grow">
+    {{outlet}}
+  </div>
+  <footer class="bg-dark text-white p-1 text-center">
+    Treehouse
+  </footer>
+</div>

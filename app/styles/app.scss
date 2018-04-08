@@ -1,0 +1,24 @@
+
+@import "ember-bootstrap/bootstrap";
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.navbar-brand img {
+  width: 45px;
+  border-radius: 50%;
+  transition: .75s;
+
+  &:hover {
+    transform: rotate(-90deg);
+  }
+}
+
+#gravatar {
+  width: 220px;
+}
