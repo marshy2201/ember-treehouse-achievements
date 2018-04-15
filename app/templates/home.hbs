@@ -17,24 +17,32 @@
   </div>
 </div>
 <div class="container">
-  <h3 class="text-center mb-5">Most Recent Badges</h3>
-  {{#bs-carousel 
-    autoPlay=true 
-    showControls=false
-    showIndicators=false
-    class="mb-5 mb-md-0"
-  as |badge|}}
-    {{#each (slice 0 5 (reverse model.badges)) as |slide|}}
-      {{#badge.slide}}
-        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
-          <img alt='{{slide.name}}' src='{{slide.icon_url}}'>
-          <div class="ml-md-5 text-center text-md-left">
-            <p class="lead mt-4"><b>Chapter</b> - {{slide.courses.1.title}}</p>
-            <p class="lead"><b>Course</b> - {{slide.courses.0.title}}</p>
-            <p class="lead"><b>Date Earned</b> - {{moment-format slide.earned_date 'DD/MM/YYYY'}}</p>
-          </div>
-        </div>
-      {{/badge.slide}}
-    {{/each}}
-  {{/bs-carousel}}
+  <div class="row">
+    <div class="col-md-7">
+      <h3 class="text-center mb-5">Most Recent Badges</h3>
+      {{#bs-carousel 
+        autoPlay=true 
+        showControls=false
+        showIndicators=false
+        class="mb-5 mb-md-0"
+      as |badge|}}
+        {{#each (slice 0 5 (reverse model.badges)) as |slide|}}
+          {{#badge.slide}}
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
+              <img alt='{{slide.name}}' src='{{slide.icon_url}}'>
+              <div class="ml-md-5 text-center text-md-left">
+                <p class="lead mt-4"><b>Chapter</b> - {{slide.courses.1.title}}</p>
+                <p class="lead"><b>Course</b> - {{slide.courses.0.title}}</p>
+                <p class="lead"><b>Date Earned</b> - {{moment-format slide.earned_date 'DD/MM/YYYY'}}</p>
+              </div>
+            </div>
+          {{/badge.slide}}
+        {{/each}}
+      {{/bs-carousel}}
+    </div>
+    <div class="col-md-5 mb-5 mb-md-0">
+      <h3 class="text-center mb-5">Topics</h3>
+      {{points-chart model=model}}
+    </div>
+  </div>
 </div>
