@@ -5,20 +5,68 @@
   min-height: 100vh;
 }
 
+footer {
+  box-shadow: 0 0 2px #000;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
 
-.navbar-brand img {
-  width: 45px;
-  border-radius: 50%;
-  transition: .75s;
+.navbar-header {
+  @media (max-width: map-get($grid-breakpoints, 'md' )) {
+    width: 100%;
+  }  
+}
 
-  &:hover {
+.navbar-brand {
+  svg {
+    width: 40px;
+    transition: .75s;
+  }
+
+  path {
+    transition: .5s;
+  }
+
+  &:hover svg {
     transform: rotate(-90deg);
+
+    path {
+      fill: #eee;
+    }
   }
 }
 
 #gravatar {
-  width: 220px;
+  width: 210px;
+}
+
+.points-title {
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+// Colours
+
+.text-success {
+  color: #5fcf80!important;
+}
+
+.bg-success {
+  background: #5fcf80!important;
+}
+
+// Jumbotron 
+
+.jumbotron {
+  box-shadow: 0 0 5px #000;
+}
+
+// Carousel 
+
+.carousel-item img {
+  min-width: 130px;
+  width: 25%;
+  max-width: 180px;
 }
