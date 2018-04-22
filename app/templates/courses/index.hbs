@@ -1,0 +1,8 @@
+<h2 class="text-center mb-3">Courses</h2>
+<div class="row">
+  <div class="courses d-flex flex-wrap">
+    {{#each (compact courses) as |course|}}
+      {{#link-to 'courses.course' (dasherize course) class="btn btn-success"}}{{course}}{{/link-to}}
+    {{/each}}
+  </div>
+</div>

@@ -1,12 +1,9 @@
-
 @import "ember-bootstrap/bootstrap";
+
+$success: #5fcf80!important;
 
 .wrapper {
   min-height: 100vh;
-}
-
-footer {
-  box-shadow: 0 0 2px #000;
 }
 
 .flex-grow {
@@ -47,26 +44,45 @@ footer {
   font-size: 2rem;
 }
 
+.card-img-top {
+  max-width: 160px;
+}
+
+.box-shadow-dark {
+  box-shadow: 0 0 5px #000;
+}
+
 // Colours
 
 .text-success {
-  color: #5fcf80!important;
+  color: $success;
 }
 
 .bg-success {
-  background: #5fcf80!important;
+  background: $success;
 }
 
-// Jumbotron 
-
-.jumbotron {
-  box-shadow: 0 0 5px #000;
+.border-success {
+  border-color: $success;
 }
 
 // Carousel 
 
 .carousel-item img {
-  min-width: 130px;
-  width: 35%;
-  max-width: 200px;
+  min-width: 140px;
+  width: 28%;
+  max-width: 160px;
+}
+
+// Courses
+
+.courses .btn {
+  flex: 1 32.333333%;
+  margin: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    flex: 1 100%;
+  }
 }

@@ -42,7 +42,10 @@ export default Component.extend({
 
     this.options = {
       legend: {
-        display: false
+        position: "left",
+        labels: {
+          fontSize: 15
+        }
       },
       animation: {
         duration: 2000

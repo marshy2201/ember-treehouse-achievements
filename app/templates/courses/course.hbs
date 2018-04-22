@@ -1,0 +1,13 @@
+<h3 class="text-center mb-5">{{model.0.courses.0.title}}</h3>
+<div class="row">
+  {{#each model as |badge|}}
+    <div class="col-md-4 col-lg-3 mb-3">
+      <div class="card align-items-center pt-4 h-100 box-shadow-dark">
+        <img class="card-img-top" src={{badge.icon_url}} alt="Card image cap">
+        <div class="card-body">
+          <h6 class="card-title text-center">{{badge.name}}</h6>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
